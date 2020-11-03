@@ -3,12 +3,12 @@ import { Orang } from './orang';
 export interface Kontak {
   id: string;
   nama: string;
-  orang?: Orang;
-  lokasi: string;
-  waktu: Date;
   tipe: TipeKontak;
   jaga: JagaJarak;
-  catatan: string;
+  orang?: Orang;
+  lokasi?: string;
+  waktu?: Date;
+  catatan?: string;
 }
 
 export enum TipeKontak {
