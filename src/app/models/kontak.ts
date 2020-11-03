@@ -12,12 +12,12 @@ export interface Kontak {
 }
 
 export enum TipeKontak {
-  IN = 'Dalam ruangan',
-  OUT = 'Luar ruangan',
+  IN_DOOR = 'In',
+  OUT_DOOR = 'Out',
 }
 
 export enum JagaJarak {
-  YA = 'Ya',
-  TIDAK = 'Tidak',
-  UN = 'Tidak yakin',
+  YA = 'Y',
+  TIDAK = 'T',
+  TIDAK_YAKIN = 'TY',
 }

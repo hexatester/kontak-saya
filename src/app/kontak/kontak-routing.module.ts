@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { KontakAddComponent } from './kontak-add/kontak-add.component';
 import { KontakListComponent } from './kontak-list/kontak-list.component';
 
 import { KontakComponent } from './kontak.component';
@@ -12,6 +13,10 @@ const routes: Routes = [
       {
         path: '',
         component: KontakListComponent,
+      },
+      {
+        path: 'baru',
+        component: KontakAddComponent,
       },
     ],
   },

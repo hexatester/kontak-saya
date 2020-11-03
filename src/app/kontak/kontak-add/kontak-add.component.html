@@ -1,0 +1,78 @@
+<form [formGroup]="kontakForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>Tambah Kontak</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nama" formControlName="nama" />
+            <mat-error *ngIf="kontakForm.controls['nama'].hasError('required')">
+              Nama <strong>wajib diisi</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Lokasi" formControlName="lokasi" />
+            <mat-error
+              *ngIf="kontakForm.controls['lokasi'].hasError('required')"
+            >
+              Lokasi <strong>wajib diisi</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Tipe kontak" formControlName="tipe">
+              <mat-option
+                *ngFor="let tk of TIPE_KONTAK"
+                [value]="tk.abbreviation"
+              >
+                {{ tk.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="kontakForm.controls['tipe'].hasError('required')">
+              Tipe kontak <strong>wajib diisi</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="full-width">
+            <mat-select placeholder="Jaga jarak" formControlName="jaga">
+              <mat-option
+                *ngFor="let tk of JAGA_JARAK"
+                [value]="tk.abbreviation"
+              >
+                {{ tk.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="kontakForm.controls['jaga'].hasError('required')">
+              Jaga jarak <strong>wajib diisi</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Catatan" formControlName="catatan" />
+            <mat-error
+              *ngIf="kontakForm.controls['lokasi'].hasError('required')"
+            >
+              Catatan <strong>wajib diisi</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

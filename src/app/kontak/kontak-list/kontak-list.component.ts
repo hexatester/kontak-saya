@@ -2,8 +2,11 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
+import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
+import { hapusKontak } from 'src/app/actions/kontak';
 import { Kontak } from 'src/app/models/kontak';
+import { State } from 'src/app/reducers';
 import { KontakService } from '../kontak.service';
 
 @Component({
@@ -18,8 +21,8 @@ export class KontakListComponent implements AfterViewInit, OnInit {
   kontaks$: Observable<Array<Kontak>>;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['id', 'nama'];
-  constructor(private service: KontakService) {}
+  displayedColumns = ['nama', 'waktu', 'delete'];
+  constructor(private service: KontakService, private store: Store<State>) {}
 
   ngOnInit() {
     this.kontaks$ = this.service.kontaks$;
@@ -29,5 +32,8 @@ export class KontakListComponent implements AfterViewInit, OnInit {
     this.service.sort = this.sort;
     this.service.paginator = this.paginator;
     this.table.dataSource = this.service;
+  }
+  detele(id: string): void {
+    this.store.dispatch(hapusKontak({ id }));
   }
 }

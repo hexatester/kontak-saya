@@ -11,8 +11,8 @@ export const initialKontakState: KontakState = {
     {
       id: 'ABC',
       nama: 'Aku',
-      tipe: TipeKontak.IN,
-      jaga: JagaJarak.UN,
+      tipe: TipeKontak.IN_DOOR,
+      jaga: JagaJarak.YA,
     },
   ],
 };

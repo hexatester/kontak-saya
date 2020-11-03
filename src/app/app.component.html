@@ -24,7 +24,15 @@
       >
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>{{ title }}</span>
+      <span style="margin-right: auto">{{ title }}</span>
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>add</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['kontak', 'baru']">
+          Tambah Kontak
+        </button>
+      </mat-menu>
     </mat-toolbar>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
