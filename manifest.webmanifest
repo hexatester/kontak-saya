@@ -1,6 +1,6 @@
 {
-  "name": "kontak-saya",
-  "short_name": "kontak-saya",
+  "name": "Kontak Saya",
+  "short_name": "Kontak Saya",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
