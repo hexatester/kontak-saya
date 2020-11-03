@@ -1,13 +1,20 @@
 import { createReducer, on } from '@ngrx/store';
 import { editKontak, hapusKontak, tambahKontak } from '../actions/kontak';
-import { Kontak } from '../models/kontak';
+import { JagaJarak, Kontak, TipeKontak } from '../models/kontak';
 
 export interface KontakState {
   list: Array<Kontak>;
 }
 
 export const initialKontakState: KontakState = {
-  list: [],
+  list: [
+    {
+      id: 'ABC',
+      nama: 'Aku',
+      tipe: TipeKontak.IN,
+      jaga: JagaJarak.UN,
+    },
+  ],
 };
 
 export const kontakReducer = createReducer(
