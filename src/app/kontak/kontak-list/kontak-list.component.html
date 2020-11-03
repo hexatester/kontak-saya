@@ -16,7 +16,9 @@
     <ng-container matColumnDef="delete">
       <th mat-header-cell *matHeaderCellDef>Hapus</th>
       <td mat-cell *matCellDef="let row">
-        <button (click)="detele(row.id)"><mat-icon>delete</mat-icon></button>
+        <button mat-button (click)="detele(row.id)">
+          <mat-icon>delete</mat-icon>
+        </button>
       </td>
     </ng-container>
 
