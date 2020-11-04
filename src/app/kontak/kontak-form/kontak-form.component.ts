@@ -22,6 +22,7 @@ interface TipeOption {
 export class KontakFormComponent implements OnInit {
   kontakForm: FormGroup;
   id: String;
+  kontak?: Kontak;
   private kontaks$: Observable<Array<Kontak>>;
 
   TIPE_KONTAK: TipeOption[] = [
@@ -42,23 +43,32 @@ export class KontakFormComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {}
 
+  public get title(): string {
+    return this.kontak
+      ? this.kontak?.nama
+        ? `Edit ${this.kontak?.nama}`
+        : 'Edit Kontak'
+      : 'Kontak Baru';
+  }
+
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
-    let k: Kontak;
     if (this.id) {
       this.kontaks$ = this.store.select((store) => store.kontak.list);
       this.kontaks$
         .pipe(take(1))
-        .subscribe((kontaks) => (k = kontaks.find((k) => k.id === this.id)));
+        .subscribe(
+          (kontaks) => (this.kontak = kontaks.find((k) => k.id === this.id))
+        );
     }
     console.log(this.id);
     this.kontakForm = this.fb.group({
-      nama: [k?.nama || null, Validators.required],
-      lokasi: [k?.lokasi || null, Validators.required],
-      tipe: [k?.tipe || null, Validators.required],
-      jaga: [k?.jaga || null, Validators.required],
-      waktu: [k?.waktu || null],
-      catatan: [k?.catatan || null],
+      nama: [this.kontak?.nama || null, Validators.required],
+      lokasi: [this.kontak?.lokasi || null, Validators.required],
+      tipe: [this.kontak?.tipe || null, Validators.required],
+      jaga: [this.kontak?.jaga || null, Validators.required],
+      waktu: [this.kontak?.waktu || null],
+      catatan: [this.kontak?.catatan || null],
     });
   }
 
