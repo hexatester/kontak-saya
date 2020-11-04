@@ -21,7 +21,7 @@ export class KontakListComponent implements AfterViewInit, OnInit {
   kontaks$: Observable<Array<Kontak>>;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['nama', 'waktu', 'delete'];
+  displayedColumns = ['nama', 'waktu', 'edit', 'delete'];
   constructor(private service: KontakService, private store: Store<State>) {}
 
   ngOnInit() {

@@ -24,12 +24,9 @@ export const kontakReducer = createReducer(
     list: [kontak, ...state.list],
   })),
   on(editKontak, (state, { kontak }) => {
-    state.list.forEach((k, i, list) => {
-      if (k.id === kontak.id) {
-        list[i] = kontak;
-      }
-    });
-    return { ...state };
+    let list = state.list.filter((k) => k.id !== kontak.id);
+    list = state.list.length === list.length ? state.list : [...list, kontak];
+    return { ...state, list };
   }),
   on(hapusKontak, (state, { id }) => ({
     ...state,

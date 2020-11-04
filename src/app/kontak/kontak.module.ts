@@ -8,7 +8,6 @@ import { MatSortModule } from '@angular/material/sort';
 import { KontakRoutingModule } from './kontak-routing.module';
 import { KontakComponent } from './kontak.component';
 import { KontakListComponent } from './kontak-list/kontak-list.component';
-import { KontakAddComponent } from './kontak-add/kontak-add.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
@@ -16,6 +15,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
+import { KontakFormComponent } from './kontak-form/kontak-form.component';
 
 const materialModules = [
   MatTableModule,
@@ -33,7 +33,7 @@ const materialModules = [
 ];
 
 @NgModule({
-  declarations: [KontakComponent, KontakListComponent, KontakAddComponent],
+  declarations: [KontakComponent, KontakListComponent, KontakFormComponent],
   imports: [
     CommonModule,
     KontakRoutingModule,

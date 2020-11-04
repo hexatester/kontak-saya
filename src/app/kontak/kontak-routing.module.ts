@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { KontakAddComponent } from './kontak-add/kontak-add.component';
+import { KontakFormComponent } from './kontak-form/kontak-form.component';
 import { KontakListComponent } from './kontak-list/kontak-list.component';
 
 import { KontakComponent } from './kontak.component';
@@ -16,7 +16,11 @@ const routes: Routes = [
       },
       {
         path: 'baru',
-        component: KontakAddComponent,
+        component: KontakFormComponent,
+      },
+      {
+        path: ':id',
+        component: KontakFormComponent,
       },
     ],
   },

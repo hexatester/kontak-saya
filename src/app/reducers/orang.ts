@@ -17,12 +17,8 @@ export const orangReducer = createReducer(
     list: [orang, ...state.list],
   })),
   on(editOrang, (state, { orang }) => {
-    state.list.forEach((o, i, list) => {
-      if (o.id === orang.id) {
-        list[i] = orang;
-      }
-    });
-    return { ...state };
+    let list = state.list.filter((o) => o.id !== orang.id);
+    return { ...state, list: [...list, orang] };
   }),
   on(hapusOrang, (state, { id }) => ({
     ...state,

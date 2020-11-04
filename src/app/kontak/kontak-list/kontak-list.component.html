@@ -12,6 +12,16 @@
       <td mat-cell *matCellDef="let row">{{ row.waktu | date }}</td>
     </ng-container>
 
+    <!-- Edit Column -->
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef>Edit</th>
+      <td mat-cell *matCellDef="let row">
+        <a mat-button [routerLink]="[row.id]">
+          <mat-icon>edit</mat-icon>
+        </a>
+      </td>
+    </ng-container>
+
     <!-- Delete Column -->
     <ng-container matColumnDef="delete">
       <th mat-header-cell *matHeaderCellDef>Hapus</th>
