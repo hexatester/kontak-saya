@@ -1,11 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { TentangComponent } from './tentang/tentang.component';
 
 const routes: Routes = [
   {
     path: 'kontak',
     loadChildren: () =>
       import('./kontak/kontak.module').then((m) => m.KontakModule),
+  },
+  {
+    path: 'tentang',
+    component: TentangComponent,
   },
 ];
 

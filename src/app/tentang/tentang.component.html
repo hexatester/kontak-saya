@@ -1,0 +1,43 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Tentang</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Kontak Saya didistribusikan dengan harapan bermanfaat, tetapi TANPA
+      JAMINAN APA PUN; bahkan tanpa jaminan tersirat tentang DIPERDAGANGKAN atau
+      KESESUAIAN UNTUK TUJUAN TERTENTU.
+    </p>
+    <p>
+      Halaman ini digunakan untuk memberi tahu pengunjung mengenai kebijakan
+      kami dengan pengumpulan, penggunaan, dan pengungkapan Informasi Pribadi
+      jika ada yang memutuskan untuk menggunakan Kontak Saya.
+    </p>
+    <p>
+      Singkatnya, karena Kontak Saya tidak terhubung ke internet, tidak ada
+      Informasi Pribadi yang akan disimpan atau disalin di luar perangkat
+      pengguna.
+    </p>
+    <p>
+      Jika Anda memilih untuk menggunakan Kontak Saya, Anda menyetujui
+      pengumpulan (tidak ada) dan penggunaan informasi terkait dengan kebijakan
+      ini. Informasi Pribadi yang dikumpulkan Kontak Saya digunakan untuk
+      menyediakan layanannya.
+    </p>
+    <p>
+      Seperti yang dijelaskan di atas, kami tidak dapat mengaksesnya dan
+      karenanya itu kami tidak akan menggunakan atau membagikan informasi Anda
+      dengan siapa pun.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-button
+      color="primary"
+      [disabled]="accept$ | async"
+      (click)="toggleAccept()"
+    >
+      Terima
+    </button>
+  </mat-card-actions>
+</mat-card>

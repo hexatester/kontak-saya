@@ -15,6 +15,8 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { TentangComponent } from './tentang/tentang.component';
+import { MatCardModule } from '@angular/material/card';
 
 const materialModules = [
   MatToolbarModule,
@@ -23,10 +25,11 @@ const materialModules = [
   MatIconModule,
   MatListModule,
   MatMenuModule,
+  MatCardModule,
 ];
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, TentangComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,7 +39,9 @@ const materialModules = [
     }),
     LayoutModule,
     ...materialModules,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent],
