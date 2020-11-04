@@ -9,15 +9,18 @@ import { localStorageSync } from 'ngrx-store-localstorage';
 import { environment } from '../../environments/environment';
 import { kontakReducer, KontakState } from './kontak';
 import { orangReducer, OrangState } from './orang';
+import { settingReducer, SettingState } from './setting';
 
 export interface State {
   kontak: KontakState;
   orang: OrangState;
+  setting: SettingState;
 }
 
 export const reducers: ActionReducerMap<State> = {
   kontak: kontakReducer,
   orang: orangReducer,
+  setting: settingReducer,
 };
 
 export function localStorageSyncReducer(
