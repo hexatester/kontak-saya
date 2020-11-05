@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1604468039871,
+  "timestamp": 1604604001488,
   "index": "/kontak-saya/index.html",
   "assetGroups": [
     {
@@ -11,13 +11,13 @@
         "ignoreVary": true
       },
       "urls": [
-        "/kontak-saya/4.83e79a226c981e3c09fd.js",
+        "/kontak-saya/4.dc47f54e9dd2566016a3.js",
         "/kontak-saya/favicon.ico",
         "/kontak-saya/index.html",
-        "/kontak-saya/main.395cfd1434e8caaa0cc0.js",
+        "/kontak-saya/main.11a47d66540756b44a18.js",
         "/kontak-saya/manifest.webmanifest",
         "/kontak-saya/polyfills.35a5ca1855eb057f016a.js",
-        "/kontak-saya/runtime.edb5226d629f5ee41250.js",
+        "/kontak-saya/runtime.09db30250a2f0905707e.js",
         "/kontak-saya/styles.fd6b61cc6c2b84baa94a.css"
       ],
       "patterns": []
@@ -44,7 +44,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/kontak-saya/4.83e79a226c981e3c09fd.js": "7c4ff1d06ad0567932128c4839d249599aabbe81",
+    "/kontak-saya/4.dc47f54e9dd2566016a3.js": "68dd89beed5b0f4dba4e82dc8e5e1b667eba53bc",
     "/kontak-saya/assets/icons/icon-128x128.png": "612dbf5ca44c17b984ef7ef6f435e68067649910",
     "/kontak-saya/assets/icons/icon-144x144.png": "83d6cb16e039dc2cc0047fea56e5dc242eab3f6b",
     "/kontak-saya/assets/icons/icon-152x152.png": "a2313c91883d4620cacafa0653c652c371311d22",
@@ -54,11 +54,11 @@
     "/kontak-saya/assets/icons/icon-72x72.png": "c29451d85e1faa6da18351617382ec3fe4a8e540",
     "/kontak-saya/assets/icons/icon-96x96.png": "a4f641953780e6edca919ed383e51db4f14add88",
     "/kontak-saya/favicon.ico": "622dd09d3c891648882ee5ba1995575666f0fcf4",
-    "/kontak-saya/index.html": "66a9386917c1c1a46a876c4c190fc353cc226d95",
-    "/kontak-saya/main.395cfd1434e8caaa0cc0.js": "3832db9243d9a5ecbc191939c90dab80181567c5",
+    "/kontak-saya/index.html": "ba72b3d3e84baa6d270a98c9a04ceba77200fe12",
+    "/kontak-saya/main.11a47d66540756b44a18.js": "7418b5b20e116a1364c099fc1e7f04caf73930b2",
     "/kontak-saya/manifest.webmanifest": "cdb02f77095aadb547eb92c058a781f8ea366d7b",
     "/kontak-saya/polyfills.35a5ca1855eb057f016a.js": "578360d24ce37383f261c7ef63b1f822d28e8dde",
-    "/kontak-saya/runtime.edb5226d629f5ee41250.js": "432484cb180145d291207a91c0e45078fda0da0c",
+    "/kontak-saya/runtime.09db30250a2f0905707e.js": "08f17efbf64b9823353cee5b57e0c30cb36dadee",
     "/kontak-saya/styles.fd6b61cc6c2b84baa94a.css": "f7b7e3bc5642549f6800a23a347f16f75ae511ea"
   },
   "navigationUrls": [
