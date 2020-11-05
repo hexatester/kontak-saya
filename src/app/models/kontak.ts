@@ -5,7 +5,7 @@ export interface Kontak {
   nama: string;
   tipe: TipeKontak;
   jaga: JagaJarak;
-  orang?: Orang;
+  orang?: Orang[];
   lokasi?: string;
   waktu?: Date;
   catatan?: string;
