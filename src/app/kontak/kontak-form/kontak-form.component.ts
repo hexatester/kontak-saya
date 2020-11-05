@@ -75,7 +75,6 @@ export class KontakFormComponent implements OnInit {
   onSubmit() {
     let kontak: Kontak = {
       id: this.id || uuid(),
-      waktu: new Date(),
       ...this.kontakForm.value,
     };
     if (this.id) {

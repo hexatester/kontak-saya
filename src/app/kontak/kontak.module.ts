@@ -16,6 +16,12 @@ import { MatCardModule } from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { KontakFormComponent } from './kontak-form/kontak-form.component';
+import {
+  NgxMatDatetimePickerModule,
+  NgxMatNativeDateModule,
+  NgxMatTimepickerModule,
+} from '@angular-material-components/datetime-picker';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 const materialModules = [
   MatTableModule,
@@ -30,6 +36,9 @@ const materialModules = [
   MatRadioModule,
   MatCardModule,
   MatIconModule,
+  MatDatepickerModule,
+  NgxMatNativeDateModule,
+  NgxMatDatetimePickerModule,
 ];
 
 @NgModule({

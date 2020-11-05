@@ -61,6 +61,28 @@
       <div class="row">
         <div class="col">
           <mat-form-field class="full-width">
+            <input
+              matInput
+              [ngxMatDatetimePicker]="picker"
+              placeholder="Waktu"
+              formControlName="waktu"
+            />
+            <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-error
+              *ngIf="kontakForm.controls['waktu'].hasError('required')"
+            >
+              Waktu <strong>wajib diisi</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
             <input matInput placeholder="Catatan" formControlName="catatan" />
             <mat-error
               *ngIf="kontakForm.controls['lokasi'].hasError('required')"
