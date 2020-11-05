@@ -3,26 +3,18 @@ import { Routes, RouterModule } from '@angular/router';
 import { KontakFormComponent } from './kontak-form/kontak-form.component';
 import { KontakListComponent } from './kontak-list/kontak-list.component';
 
-import { KontakComponent } from './kontak.component';
-
 const routes: Routes = [
   {
     path: '',
-    component: KontakComponent,
-    children: [
-      {
-        path: '',
-        component: KontakListComponent,
-      },
-      {
-        path: 'baru',
-        component: KontakFormComponent,
-      },
-      {
-        path: ':id',
-        component: KontakFormComponent,
-      },
-    ],
+    component: KontakListComponent,
+  },
+  {
+    path: 'baru',
+    component: KontakFormComponent,
+  },
+  {
+    path: ':id',
+    component: KontakFormComponent,
   },
 ];
 

@@ -6,7 +6,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
 import { KontakRoutingModule } from './kontak-routing.module';
-import { KontakComponent } from './kontak.component';
 import { KontakListComponent } from './kontak-list/kontak-list.component';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
@@ -42,7 +41,7 @@ const materialModules = [
 ];
 
 @NgModule({
-  declarations: [KontakComponent, KontakListComponent, KontakFormComponent],
+  declarations: [KontakListComponent, KontakFormComponent],
   imports: [
     CommonModule,
     KontakRoutingModule,
