@@ -1,6 +1,6 @@
 export interface Orang {
   id: string;
-  name: string;
+  nama: string;
   telepon?: string;
   alamat?: string;
 }

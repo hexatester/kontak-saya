@@ -1,0 +1,46 @@
+<form [formGroup]="orangForm" novalidate (ngSubmit)="onSubmit()">
+  <mat-card class="shipping-card">
+    <mat-card-header>
+      <mat-card-title>{{ title }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nama" formControlName="nama" />
+            <mat-error *ngIf="orangForm.controls['nama'].hasError('required')">
+              Nama <strong>wajib diisi</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Nomor hp" formControlName="telepon" />
+            <mat-error
+              *ngIf="orangForm.controls['telepon'].hasError('required')"
+            >
+              Nomor hp <strong>wajib diisi</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="full-width">
+            <input matInput placeholder="Alamat" formControlName="alamat" />
+            <mat-error
+              *ngIf="orangForm.controls['alamat'].hasError('required')"
+            >
+              Alamat <strong>wajib diisi</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Submit</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

@@ -9,6 +9,11 @@ const routes: Routes = [
       import('./kontak/kontak.module').then((m) => m.KontakModule),
   },
   {
+    path: 'orang',
+    loadChildren: () =>
+      import('./orang/orang.module').then((m) => m.OrangModule),
+  },
+  {
     path: 'tentang',
     component: TentangComponent,
   },
