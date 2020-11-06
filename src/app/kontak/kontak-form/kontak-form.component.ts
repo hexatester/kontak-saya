@@ -61,7 +61,6 @@ export class KontakFormComponent implements OnInit {
           (kontaks) => (this.kontak = kontaks.find((k) => k.id === this.id))
         );
     }
-    console.log(this.id);
     this.kontakForm = this.fb.group({
       nama: [this.kontak?.nama || null, Validators.required],
       lokasi: [this.kontak?.lokasi || null, Validators.required],
@@ -82,7 +81,6 @@ export class KontakFormComponent implements OnInit {
     } else {
       this.store.dispatch(tambahKontak({ kontak }));
     }
-    console.log(kontak);
     this.router.navigate(['kontak']);
   }
 }
