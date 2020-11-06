@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { merge, Observable } from 'rxjs';
 import { State } from '../reducers';
 import { Kontak } from '../models/kontak';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { DataSource } from '@angular/cdk/collections';
+import { map, take } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -19,10 +20,23 @@ export class KontakService extends DataSource<Kontak> {
     super();
     this.kontaks$ = store.select((state) => state.kontak.list);
   }
-  disconnect() {}
+
   connect(): Observable<Array<Kontak>> {
-    return this.kontaks$;
+    const dataMutations = [
+      this.kontaks$,
+      this.paginator?.page,
+      this.sort?.sortChange,
+    ];
+    return merge(...dataMutations).pipe(
+      map(() => {
+        let kontaks: Kontak[];
+        this.kontaks$.pipe(take(1)).subscribe((k) => (kontaks = k));
+        return this.getPagedData(this.getSortedData([...kontaks]));
+      })
+    );
   }
+
+  disconnect(): void {}
 
   private getPagedData(data: Array<Kontak>) {
     const startIndex = this.paginator.pageIndex * this.paginator.pageSize;
