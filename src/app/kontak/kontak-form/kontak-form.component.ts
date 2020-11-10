@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { v4 as uuid } from 'uuid';
 import { Kontak } from 'src/app/models/kontak';
@@ -21,9 +21,9 @@ interface TipeOption {
   styleUrls: ['./kontak-form.component.scss'],
 })
 export class KontakFormComponent implements OnInit {
+  @Input() id: String;
+  @Input() kontak?: Kontak;
   kontakForm: FormGroup;
-  id: String;
-  kontak?: Kontak;
   orangs$: Observable<Array<Orang>>;
   private kontaks$: Observable<Array<Kontak>>;
 

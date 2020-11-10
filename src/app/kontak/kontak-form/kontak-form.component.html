@@ -31,7 +31,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <mat-form-field class="full-width">
+          <mat-form-field class="half-width">
             <input matInput placeholder="Lokasi" formControlName="lokasi" />
             <mat-error
               *ngIf="kontakForm.controls['lokasi'].hasError('required')"
@@ -40,11 +40,9 @@
             </mat-error>
           </mat-form-field>
         </div>
-      </div>
-      <div class="row">
         <div class="col">
           <mat-form-field class="half-width">
-            <mat-select placeholder="Tipe kontak" formControlName="tipe">
+            <mat-select placeholder="Tipe lokasi" formControlName="tipe">
               <mat-option
                 *ngFor="let tk of TIPE_KONTAK"
                 [value]="tk.abbreviation"
@@ -57,6 +55,8 @@
             </mat-error>
           </mat-form-field>
         </div>
+      </div>
+      <div class="row">
         <div class="col">
           <mat-form-field class="half-width">
             <mat-select placeholder="Jaga jarak" formControlName="jaga">
@@ -72,8 +72,6 @@
             </mat-error>
           </mat-form-field>
         </div>
-      </div>
-      <div class="row">
         <div class="col">
           <mat-form-field class="half-width">
             <mat-select placeholder="Pakai masker" formControlName="masker">
@@ -157,7 +155,7 @@
       </div>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Submit</button>
+      <button mat-raised-button color="primary" type="submit">Simpan</button>
     </mat-card-actions>
   </mat-card>
 </form>
