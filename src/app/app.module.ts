@@ -18,6 +18,7 @@ import { reducers, metaReducers } from './reducers';
 import { AppComponent } from './app.component';
 import { TentangComponent } from './tentang/tentang.component';
 import { environment } from '../environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 const materialModules = [
   MatToolbarModule,
@@ -42,6 +43,10 @@ const materialModules = [
     ...materialModules,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production,
     }),
   ],
   providers: [],
