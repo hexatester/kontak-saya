@@ -93,7 +93,13 @@ MIT
 @angular/service-worker
 MIT
 
+@ng-select/ng-select
+MIT
+
 @ngrx/store
+MIT
+
+@ngrx/store-devtools
 MIT
 
 css-loader
