@@ -1,7 +1,7 @@
 <div class="mat-elevation-z8">
   <mat-card>
     <mat-card-header>
-      <mat-card-title> Daftar Kontak </mat-card-title>
+      <mat-card-title>Daftar Kontak</mat-card-title>
     </mat-card-header>
     <mat-card-content>
       <table mat-table class="full-width-table" matSort aria-label="Elements">
@@ -36,8 +36,13 @@
     </mat-card-content>
 
     <mat-card-actions>
-      <mat-paginator #paginator [length]="(kontaks$ | async)?.length" [pageIndex]="0" [pageSize]="50"
-        [pageSizeOptions]="[25, 50, 100, 250]">
+      <mat-paginator
+        #paginator
+        [length]="(kontaks$ | async)?.length"
+        [pageIndex]="0"
+        [pageSize]="50"
+        [pageSizeOptions]="[25, 50, 100, 250]"
+      >
       </mat-paginator>
     </mat-card-actions>
   </mat-card>
