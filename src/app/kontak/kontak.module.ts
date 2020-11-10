@@ -12,7 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatCardModule } from '@angular/material/card';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { KontakFormComponent } from './kontak-form/kontak-form.component';
 import {
@@ -20,6 +20,8 @@ import {
   NgxMatNativeDateModule,
 } from '@angular-material-components/datetime-picker';
 import { MatDatepickerModule } from '@angular/material/datepicker';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 const materialModules = [
   MatTableModule,
@@ -28,7 +30,6 @@ const materialModules = [
   MatTableModule,
   MatPaginatorModule,
   MatSortModule,
-  MatInputModule,
   MatButtonModule,
   MatSelectModule,
   MatRadioModule,
@@ -44,8 +45,12 @@ const materialModules = [
   imports: [
     CommonModule,
     KontakRoutingModule,
-    ReactiveFormsModule,
     ...materialModules,
+    MatInputModule,
+    MatFormFieldModule,
+    FormsModule,
+    ReactiveFormsModule,
+    NgSelectModule,
   ],
 })
 export class KontakModule {}

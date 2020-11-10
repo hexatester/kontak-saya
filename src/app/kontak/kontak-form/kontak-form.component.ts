@@ -8,6 +8,7 @@ import { editKontak, tambahKontak } from 'src/app/actions/kontak';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { take } from 'rxjs/operators';
+import { Orang } from 'src/app/models/orang';
 
 interface TipeOption {
   name: string;
@@ -23,6 +24,7 @@ export class KontakFormComponent implements OnInit {
   kontakForm: FormGroup;
   id: String;
   kontak?: Kontak;
+  orangs$: Observable<Array<Orang>>;
   private kontaks$: Observable<Array<Kontak>>;
 
   TIPE_KONTAK: TipeOption[] = [
@@ -51,6 +53,7 @@ export class KontakFormComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.orangs$ = this.store.select((state) => state.orang.list);
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
     if (this.id) {
       this.kontaks$ = this.store.select((store) => store.kontak.list);
@@ -62,6 +65,7 @@ export class KontakFormComponent implements OnInit {
     }
     this.kontakForm = this.fb.group({
       nama: [this.kontak?.nama || null, Validators.required],
+      orang: [this.kontak?.orang || []],
       lokasi: [this.kontak?.lokasi || null, Validators.required],
       tipe: [this.kontak?.tipe || 'In', Validators.required],
       jaga: [this.kontak?.jaga || 'Y', Validators.required],

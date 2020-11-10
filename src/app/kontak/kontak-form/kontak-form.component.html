@@ -16,6 +16,21 @@
       </div>
       <div class="row">
         <div class="col">
+          <ng-select
+            matInput
+            [items]="orangs$ | async"
+            [multiple]="true"
+            placeholder="Orang"
+            formControlName="orang"
+            bindLabel="nama"
+            bindValue="id"
+            notFoundText="Tidak ada orang ditemukan"
+          >
+          </ng-select>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
           <mat-form-field class="full-width">
             <input matInput placeholder="Lokasi" formControlName="lokasi" />
             <mat-error

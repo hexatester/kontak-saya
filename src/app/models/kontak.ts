@@ -1,9 +1,7 @@
-import { Orang } from './orang';
-
 export interface Kontak {
   id: string;
   nama?: string;
-  orang?: Array<Orang>;
+  orang?: Array<string>;
   tipe?: TipeKontak;
   jaga?: JagaJarak;
   masker?: PakaiMasker;
