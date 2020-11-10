@@ -1,6 +1,7 @@
 <form [formGroup]="kontakForm" novalidate (ngSubmit)="onSubmit()">
   <mat-card class="shipping-card">
     <mat-card-header>
+      <div mat-card-avatar><mat-icon>group_add</mat-icon></div>
       <mat-card-title>{{ title }}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
@@ -50,8 +51,9 @@
                 {{ tk.name }}
               </mat-option>
             </mat-select>
+            <mat-icon matSuffix>roofing</mat-icon>
             <mat-error *ngIf="kontakForm.controls['tipe'].hasError('required')">
-              Tipe kontak <strong>wajib diisi</strong>
+              Tipe lokasi <strong>wajib diisi</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -67,6 +69,7 @@
                 {{ tk.name }}
               </mat-option>
             </mat-select>
+            <mat-icon matSuffix>6_ft_apart</mat-icon>
             <mat-error *ngIf="kontakForm.controls['jaga'].hasError('required')">
               Jaga jarak <strong>wajib diisi</strong>
             </mat-error>
@@ -82,6 +85,7 @@
                 {{ pm.name }}
               </mat-option>
             </mat-select>
+            <mat-icon matSuffix>masks</mat-icon>
             <mat-error
               *ngIf="kontakForm.controls['masker'].hasError('required')"
             >
@@ -145,6 +149,7 @@
         <div class="col">
           <mat-form-field class="full-width">
             <input matInput placeholder="Catatan" formControlName="catatan" />
+            <mat-icon matSuffix>note</mat-icon>
             <mat-error
               *ngIf="kontakForm.controls['catatan'].hasError('required')"
             >
