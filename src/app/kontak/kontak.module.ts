@@ -18,7 +18,6 @@ import { KontakFormComponent } from './kontak-form/kontak-form.component';
 import {
   NgxMatDatetimePickerModule,
   NgxMatNativeDateModule,
-  NgxMatTimepickerModule,
 } from '@angular-material-components/datetime-picker';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 

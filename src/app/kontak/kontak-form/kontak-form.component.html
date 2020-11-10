@@ -28,7 +28,7 @@
       </div>
       <div class="row">
         <div class="col">
-          <mat-form-field class="full-width">
+          <mat-form-field class="half-width">
             <mat-select placeholder="Tipe kontak" formControlName="tipe">
               <mat-option
                 *ngFor="let tk of TIPE_KONTAK"
@@ -43,7 +43,7 @@
           </mat-form-field>
         </div>
         <div class="col">
-          <mat-form-field class="full-width">
+          <mat-form-field class="half-width">
             <mat-select placeholder="Jaga jarak" formControlName="jaga">
               <mat-option
                 *ngFor="let tk of JAGA_JARAK"
@@ -60,14 +60,37 @@
       </div>
       <div class="row">
         <div class="col">
-          <mat-form-field class="full-width">
+          <mat-form-field class="half-width">
+            <mat-select placeholder="Pakai masker" formControlName="masker">
+              <mat-option
+                *ngFor="let pm of PAKAI_MASKER"
+                [value]="pm.abbreviation"
+              >
+                {{ pm.name }}
+              </mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="kontakForm.controls['masker'].hasError('required')"
+            >
+              Pakai Masker <strong>wajib diisi</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <mat-form-field class="half-width">
             <input
               matInput
               [ngxMatDatetimePicker]="picker"
-              placeholder="Waktu"
+              [max]="kontakForm.value.waktuEnd"
+              placeholder="Dari"
               formControlName="waktu"
             />
-            <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+            <ngx-mat-datetime-picker
+              #picker
+              [showSeconds]="false"
+            ></ngx-mat-datetime-picker>
             <mat-datepicker-toggle
               matSuffix
               [for]="picker"
@@ -75,7 +98,32 @@
             <mat-error
               *ngIf="kontakForm.controls['waktu'].hasError('required')"
             >
-              Waktu <strong>wajib diisi</strong>
+              Dari Waktu <strong>wajib diisi</strong>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="col">
+          <mat-form-field class="half-width">
+            <input
+              matInput
+              [ngxMatDatetimePicker]="pickerEnd"
+              [min]="kontakForm.value.waktu"
+              [max]="maxDate"
+              placeholder="Sampai"
+              formControlName="waktuEnd"
+            />
+            <ngx-mat-datetime-picker
+              #pickerEnd
+              [showSeconds]="false"
+            ></ngx-mat-datetime-picker>
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="pickerEnd"
+            ></mat-datepicker-toggle>
+            <mat-error
+              *ngIf="kontakForm.controls['waktuEnd'].hasError('required')"
+            >
+              Sampai waktu <strong>wajib diisi</strong>
             </mat-error>
           </mat-form-field>
         </div>
@@ -85,7 +133,7 @@
           <mat-form-field class="full-width">
             <input matInput placeholder="Catatan" formControlName="catatan" />
             <mat-error
-              *ngIf="kontakForm.controls['lokasi'].hasError('required')"
+              *ngIf="kontakForm.controls['catatan'].hasError('required')"
             >
               Catatan <strong>wajib diisi</strong>
             </mat-error>

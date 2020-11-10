@@ -26,11 +26,18 @@ export class KontakFormComponent implements OnInit {
   private kontaks$: Observable<Array<Kontak>>;
 
   TIPE_KONTAK: TipeOption[] = [
-    { name: 'Dalam Ruangan', abbreviation: 'In' },
-    { name: 'Luar Ruangan', abbreviation: 'Out' },
+    { name: 'Dalam ruangan', abbreviation: 'In' },
+    { name: 'Luar ruangan', abbreviation: 'Out' },
+    { name: 'Tidak dapat ditentukan', abbreviation: 'N' },
   ];
 
   JAGA_JARAK: TipeOption[] = [
+    { name: 'Ya', abbreviation: 'Y' },
+    { name: 'Tidak', abbreviation: 'T' },
+    { name: 'Tidak yakin', abbreviation: 'TY' },
+  ];
+
+  PAKAI_MASKER: TipeOption[] = [
     { name: 'Ya', abbreviation: 'Y' },
     { name: 'Tidak', abbreviation: 'T' },
     { name: 'Tidak yakin', abbreviation: 'TY' },
@@ -42,14 +49,6 @@ export class KontakFormComponent implements OnInit {
     private router: Router,
     private activatedRoute: ActivatedRoute
   ) {}
-
-  public get title(): string {
-    return this.kontak
-      ? this.kontak?.nama
-        ? `Edit ${this.kontak?.nama}`
-        : 'Edit Kontak'
-      : 'Kontak Baru';
-  }
 
   ngOnInit() {
     this.id = this.activatedRoute.snapshot.paramMap.get('id');
@@ -64,9 +63,11 @@ export class KontakFormComponent implements OnInit {
     this.kontakForm = this.fb.group({
       nama: [this.kontak?.nama || null, Validators.required],
       lokasi: [this.kontak?.lokasi || null, Validators.required],
-      tipe: [this.kontak?.tipe || null, Validators.required],
-      jaga: [this.kontak?.jaga || null, Validators.required],
-      waktu: [this.kontak?.waktu || null],
+      tipe: [this.kontak?.tipe || 'In', Validators.required],
+      jaga: [this.kontak?.jaga || 'Y', Validators.required],
+      masker: [this.kontak?.masker || 'Y', Validators.required],
+      waktu: [this.kontak?.waktu || new Date(), Validators.required],
+      waktuEnd: [this.kontak?.waktuEnd || new Date()],
       catatan: [this.kontak?.catatan || null],
     });
   }
@@ -74,6 +75,7 @@ export class KontakFormComponent implements OnInit {
   onSubmit() {
     let kontak: Kontak = {
       id: this.id || uuid(),
+      dibuat: this.kontakForm.value?.dibuat || new Date(),
       ...this.kontakForm.value,
     };
     if (this.id) {
@@ -82,5 +84,17 @@ export class KontakFormComponent implements OnInit {
       this.store.dispatch(tambahKontak({ kontak }));
     }
     this.router.navigate(['kontak']);
+  }
+
+  public get title(): string {
+    return this.kontak
+      ? this.kontak?.nama
+        ? `Edit ${this.kontak?.nama}`
+        : 'Edit Kontak'
+      : 'Kontak Baru';
+  }
+
+  public get maxDate(): Date {
+    return new Date();
   }
 }

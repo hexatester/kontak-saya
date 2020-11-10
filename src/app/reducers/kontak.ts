@@ -13,6 +13,7 @@ export const initialKontakState: KontakState = {
       nama: 'Aku',
       tipe: TipeKontak.IN_DOOR,
       jaga: JagaJarak.YA,
+      dibuat: new Date(),
     },
   ],
 };
