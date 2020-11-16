@@ -42,7 +42,9 @@ export const kontakReducer = createReducer(
     let subs = tanggal ? 0 : Math.abs(hari) || 15;
     let date = tanggal || new Date();
     date.setDate(date.getDate() - subs);
-    let list = state.list.filter((k) => k.dibuat.getTime() <= date.getTime());
+    let list = state.list.filter(
+      (k) => (k.waktuEnd || k.waktu || k.dibuat).getTime() <= date.getTime()
+    );
     return { ...state, list };
   })
 );
