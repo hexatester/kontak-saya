@@ -22,6 +22,7 @@ import {
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material/list';
 
 const materialModules = [
   MatTableModule,
@@ -38,6 +39,7 @@ const materialModules = [
   MatDatepickerModule,
   NgxMatNativeDateModule,
   NgxMatDatetimePickerModule,
+  MatListModule,
 ];
 
 @NgModule({

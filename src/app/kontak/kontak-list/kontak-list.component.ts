@@ -2,9 +2,10 @@ import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTable } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { hapusKontak } from 'src/app/actions/kontak';
+import { hapusKontak, hapusKontakLama } from 'src/app/actions/kontak';
 import { Kontak } from 'src/app/models/kontak';
 import { State } from 'src/app/reducers';
 import { KontakService } from '../kontak.service';
@@ -22,7 +23,11 @@ export class KontakListComponent implements AfterViewInit, OnInit {
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
   displayedColumns = ['nama', 'waktu', 'actions'];
-  constructor(private service: KontakService, private store: Store<State>) {}
+  constructor(
+    private service: KontakService,
+    private store: Store<State>,
+    private router: Router
+  ) {}
 
   ngOnInit() {
     this.kontaks$ = this.store.select((state) => state.kontak.list);
@@ -36,5 +41,13 @@ export class KontakListComponent implements AfterViewInit, OnInit {
 
   detele(id: string): void {
     this.store.dispatch(hapusKontak({ id }));
+  }
+
+  deleteOld(): void {
+    this.store.dispatch(hapusKontakLama({}));
+  }
+
+  tambah(): void {
+    this.router.navigate(['kontak', 'baru']);
   }
 }
