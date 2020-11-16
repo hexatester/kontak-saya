@@ -18,5 +18,5 @@ export const hapusKontak = createAction(
 
 export const hapusKontakLama = createAction(
   '[Kontak] Hapus kontak lama',
-  props<{ time?: Date }>()
+  props<{ hari?: number; tanggal?: Date }>()
 );

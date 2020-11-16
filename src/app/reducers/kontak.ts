@@ -1,5 +1,10 @@
 import { createReducer, on } from '@ngrx/store';
-import { editKontak, hapusKontak, tambahKontak } from '../actions/kontak';
+import {
+  editKontak,
+  hapusKontak,
+  hapusKontakLama,
+  tambahKontak,
+} from '../actions/kontak';
 import { JagaJarak, Kontak, TipeKontak } from '../models/kontak';
 
 export interface KontakState {
@@ -32,5 +37,12 @@ export const kontakReducer = createReducer(
   on(hapusKontak, (state, { id }) => ({
     ...state,
     list: state.list.filter((k) => k.id !== id),
-  }))
+  })),
+  on(hapusKontakLama, (state, { hari, tanggal }) => {
+    let subs = tanggal ? 0 : Math.abs(hari) || 15;
+    let date = tanggal || new Date();
+    date.setDate(date.getDate() - subs);
+    let list = state.list.filter((k) => k.dibuat.getTime() <= date.getTime());
+    return { ...state, list };
+  })
 );
