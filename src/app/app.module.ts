@@ -19,6 +19,8 @@ import { AppComponent } from './app.component';
 import { TentangComponent } from './tentang/tentang.component';
 import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { EffectsModule } from '@ngrx/effects';
 
 const materialModules = [
   MatToolbarModule,
@@ -31,7 +33,7 @@ const materialModules = [
 ];
 
 @NgModule({
-  declarations: [AppComponent, TentangComponent],
+  declarations: [AppComponent, TentangComponent, DashboardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -48,6 +50,7 @@ const materialModules = [
       maxAge: 25,
       logOnly: environment.production,
     }),
+    EffectsModule.forRoot([]),
   ],
   providers: [],
   bootstrap: [AppComponent],
