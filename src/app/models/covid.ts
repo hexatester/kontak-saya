@@ -21,7 +21,7 @@ export interface UpdateClass {
 }
 
 export interface Harian {
-  key_as_string: string;
+  key_as_string: Date;
   key: number;
   doc_count: number;
   jumlah_meninggal: Jumlah;

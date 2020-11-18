@@ -1,8 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { TentangComponent } from './tentang/tentang.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    component: DashboardComponent,
+  },
   {
     path: 'kontak',
     loadChildren: () =>

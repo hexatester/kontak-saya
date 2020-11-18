@@ -1,0 +1,115 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      Informasi Covid19 Indonesia
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content *ngIf="current$|async as c">
+    <mat-accordion multi>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Total
+          </mat-panel-title>
+          <mat-panel-description>
+            Sembuh, Dirawat, Positif, Meninggal
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item>
+            <div class="name">Total Sembuh</div>
+            <span>:</span>
+            <div class="value">{{c.update.total.jumlah_sembuh|number}}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div class="name">Total Dirawat</div>
+            <span>:</span>
+            <div class="value">{{c.update.total.jumlah_dirawat|number}}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div class="name">Total Positif</div>
+            <span>:</span>
+            <div class="value">{{c.update.total.jumlah_positif|number}}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div class="name">Total Meninggal</div>
+            <span>:</span>
+            <div class="value">{{c.update.total.jumlah_meninggal|number}}</div>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Jumlah
+          </mat-panel-title>
+          <mat-panel-description>
+            ODP, PDP, Spesimen, Spesimen Negatif
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item>
+            <div class="name">Jumlah ODP</div>
+            <span>:</span>
+            <div class="value">{{c.data.jumlah_odp|number}}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div class="name">Jumlah PDP</div>
+            <span>:</span>
+            <div class="value">{{c.data.jumlah_pdp|number}}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div class="name">Total Spesimen</div>
+            <span>:</span>
+            <div class="value">{{c.data.total_spesimen|number}}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div class="name">Total Negatif</div>
+            <span>:</span>
+            <div class="value">{{c.data.total_spesimen_negatif|number}}</div>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Penambahan
+          </mat-panel-title>
+          <mat-panel-description>
+            Positif, meninggal, sembuh, dirawat
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-list>
+          <mat-list-item>
+            <div class="name">Diperbarui</div>
+            <span>:</span>
+            <div class="value">{{c.update.penambahan.tanggal}}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div class="name">Jumlah Positif</div>
+            <span>:</span>
+            <div class="value">{{c.update.penambahan.jumlah_positif|number}}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div class="name">Jumlah Meninggal</div>
+            <span>:</span>
+            <div class="value">{{c.update.penambahan.jumlah_meninggal|number}}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div class="name">Jumlah Sembuh</div>
+            <span>:</span>
+            <div class="value">{{c.update.penambahan.jumlah_sembuh|number}}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <div class="name">Jumlah Dirawat</div>
+            <span>:</span>
+            <div class="value">{{c.update.penambahan.jumlah_dirawat|number}}</div>
+          </mat-list-item>
+        </mat-list>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-card-content>
+</mat-card>
