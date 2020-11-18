@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1605499350909,
+  "timestamp": 1605694704460,
   "index": "/kontak-saya/index.html",
   "assetGroups": [
     {
@@ -12,14 +12,14 @@
       },
       "urls": [
         "/kontak-saya/1.e19bc2b5397af54ee900.js",
-        "/kontak-saya/5.dbbc256f6427d0f48079.js",
-        "/kontak-saya/6.8ba84e9fcc647b003d27.js",
+        "/kontak-saya/5.dab5bbadcc65737efded.js",
+        "/kontak-saya/6.74cba919b621f1a2d35c.js",
         "/kontak-saya/favicon.ico",
         "/kontak-saya/index.html",
-        "/kontak-saya/main.4a086a8a4f0c0c2108f4.js",
+        "/kontak-saya/main.f213e3600b3653460c12.js",
         "/kontak-saya/manifest.webmanifest",
-        "/kontak-saya/polyfills.b798e2cd31320f43ed2f.js",
-        "/kontak-saya/runtime.7795e6f80819bcc8b04e.js",
+        "/kontak-saya/polyfills.5fe0dc9d78113d29c2b4.js",
+        "/kontak-saya/runtime.e44b41f1d02c9d17e9d4.js",
         "/kontak-saya/styles.43b80aa5efd550bff11b.css"
       ],
       "patterns": []
@@ -44,11 +44,25 @@
       "patterns": []
     }
   ],
-  "dataGroups": [],
+  "dataGroups": [
+    {
+      "name": "covid-update",
+      "patterns": [
+        "https:\\/\\/universitas-terbuka-bot\\.herokuapp\\.com\\/covid\\/"
+      ],
+      "strategy": "performance",
+      "maxSize": 10,
+      "maxAge": 43200000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
   "hashTable": {
     "/kontak-saya/1.e19bc2b5397af54ee900.js": "d0fafd906931dbc1b54476d41d145465fd76e804",
-    "/kontak-saya/5.dbbc256f6427d0f48079.js": "43d3651b0f1970757aed860a0979a5d85a8ab551",
-    "/kontak-saya/6.8ba84e9fcc647b003d27.js": "f1f87cb8a439415b50f9f8d2058c3cf711517fff",
+    "/kontak-saya/5.dab5bbadcc65737efded.js": "b9a77ee3c2a6be51f4f9e88ed81b3f9417b75a9e",
+    "/kontak-saya/6.74cba919b621f1a2d35c.js": "0c96bfd1f4e0241e42bf49dd4107b40dcd27ecc6",
     "/kontak-saya/assets/icons/icon-128x128.png": "612dbf5ca44c17b984ef7ef6f435e68067649910",
     "/kontak-saya/assets/icons/icon-144x144.png": "83d6cb16e039dc2cc0047fea56e5dc242eab3f6b",
     "/kontak-saya/assets/icons/icon-152x152.png": "a2313c91883d4620cacafa0653c652c371311d22",
@@ -58,11 +72,11 @@
     "/kontak-saya/assets/icons/icon-72x72.png": "c29451d85e1faa6da18351617382ec3fe4a8e540",
     "/kontak-saya/assets/icons/icon-96x96.png": "a4f641953780e6edca919ed383e51db4f14add88",
     "/kontak-saya/favicon.ico": "622dd09d3c891648882ee5ba1995575666f0fcf4",
-    "/kontak-saya/index.html": "d39c23232e5f836b021453698110b56ddd2c7659",
-    "/kontak-saya/main.4a086a8a4f0c0c2108f4.js": "301c1f16c9ca90a9a725880cd75c8ed730b82617",
+    "/kontak-saya/index.html": "e196fec9d2965b7cd5cd5cabfe5fd5dbe5782cca",
+    "/kontak-saya/main.f213e3600b3653460c12.js": "ed071b5fdbc01eb2e6242267b315adf20818a975",
     "/kontak-saya/manifest.webmanifest": "cdb02f77095aadb547eb92c058a781f8ea366d7b",
-    "/kontak-saya/polyfills.b798e2cd31320f43ed2f.js": "b6380ed034569010e4ec859b66fbc7c7132365a3",
-    "/kontak-saya/runtime.7795e6f80819bcc8b04e.js": "18e7e7236481a5baefd785f252e55a60207c1a81",
+    "/kontak-saya/polyfills.5fe0dc9d78113d29c2b4.js": "4583ea4040212bd032bc39cd5d24dccc13518d85",
+    "/kontak-saya/runtime.e44b41f1d02c9d17e9d4.js": "fcd03621f980b63b67737c106c7ab9d288d601ad",
     "/kontak-saya/styles.43b80aa5efd550bff11b.css": "a252b5dc5d4f30aa9b35a23e113edadeb4caf014"
   },
   "navigationUrls": [

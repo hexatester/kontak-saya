@@ -59,6 +59,9 @@ MIT
 @angular/forms
 MIT
 
+@angular/localize
+MIT
+
 @angular/material
 MIT
 The MIT License
@@ -94,6 +97,9 @@ MIT
 MIT
 
 @ng-select/ng-select
+MIT
+
+@ngrx/effects
 MIT
 
 @ngrx/store
