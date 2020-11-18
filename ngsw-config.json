@@ -1,6 +1,20 @@
 {
   "$schema": "./node_modules/@angular/service-worker/config/schema.json",
   "index": "/index.html",
+  "dataGroups": [
+    {
+      "name": "covid-update",
+      "urls": [
+        "https://universitas-terbuka-bot.herokuapp.com/covid/"
+      ],
+      "version": 1,
+      "cacheConfig": {
+        "strategy": "performance",
+        "maxSize": 10,
+        "maxAge": "12h"
+      }
+    }
+  ],
   "assetGroups": [
     {
       "name": "app",
