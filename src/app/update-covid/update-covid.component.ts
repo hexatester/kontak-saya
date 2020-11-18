@@ -19,4 +19,10 @@ export class UpdateCovidComponent implements OnInit {
     this.store.dispatch(updateCovid());
     this.current$ = this.store.select((state) => state.covid.covid);
   }
+
+  sep(num: number): string {
+    let num_parts = num.toString().split('.');
+    num_parts[0] = num_parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    return num_parts.join(',');
+  }
 }

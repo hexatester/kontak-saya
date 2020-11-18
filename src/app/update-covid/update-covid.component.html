@@ -19,22 +19,22 @@
           <mat-list-item>
             <div class="name">Total Sembuh</div>
             <span>:</span>
-            <div class="value">{{c.update.total.jumlah_sembuh|number}}</div>
+            <div class="value">{{sep(c.update.total.jumlah_sembuh)}}</div>
           </mat-list-item>
           <mat-list-item>
             <div class="name">Total Dirawat</div>
             <span>:</span>
-            <div class="value">{{c.update.total.jumlah_dirawat|number}}</div>
+            <div class="value">{{sep(c.update.total.jumlah_dirawat)}}</div>
           </mat-list-item>
           <mat-list-item>
             <div class="name">Total Positif</div>
             <span>:</span>
-            <div class="value">{{c.update.total.jumlah_positif|number}}</div>
+            <div class="value">{{sep(c.update.total.jumlah_positif)}}</div>
           </mat-list-item>
           <mat-list-item>
             <div class="name">Total Meninggal</div>
             <span>:</span>
-            <div class="value">{{c.update.total.jumlah_meninggal|number}}</div>
+            <div class="value">{{sep(c.update.total.jumlah_meninggal)}}</div>
           </mat-list-item>
         </mat-list>
       </mat-expansion-panel>
@@ -51,22 +51,22 @@
           <mat-list-item>
             <div class="name">Jumlah ODP</div>
             <span>:</span>
-            <div class="value">{{c.data.jumlah_odp|number}}</div>
+            <div class="value">{{sep(c.data.jumlah_odp)}}</div>
           </mat-list-item>
           <mat-list-item>
             <div class="name">Jumlah PDP</div>
             <span>:</span>
-            <div class="value">{{c.data.jumlah_pdp|number}}</div>
+            <div class="value">{{sep(c.data.jumlah_pdp)}}</div>
           </mat-list-item>
           <mat-list-item>
             <div class="name">Total Spesimen</div>
             <span>:</span>
-            <div class="value">{{c.data.total_spesimen|number}}</div>
+            <div class="value">{{sep(c.data.total_spesimen)}}</div>
           </mat-list-item>
           <mat-list-item>
             <div class="name">Total Negatif</div>
             <span>:</span>
-            <div class="value">{{c.data.total_spesimen_negatif|number}}</div>
+            <div class="value">{{sep(c.data.total_spesimen_negatif)}}</div>
           </mat-list-item>
         </mat-list>
       </mat-expansion-panel>
@@ -88,28 +88,32 @@
           <mat-list-item>
             <div class="name">Jumlah Positif</div>
             <span>:</span>
-            <div class="value">{{c.update.penambahan.jumlah_positif|number}}</div>
+            <div class="value">{{sep(c.update.penambahan.jumlah_positif)}}</div>
           </mat-list-item>
           <mat-list-item>
             <div class="name">Jumlah Meninggal</div>
             <span>:</span>
-            <div class="value">{{c.update.penambahan.jumlah_meninggal|number}}</div>
+            <div class="value">{{sep(c.update.penambahan.jumlah_meninggal)}}</div>
           </mat-list-item>
           <mat-list-item>
             <div class="name">Jumlah Sembuh</div>
             <span>:</span>
-            <div class="value">{{c.update.penambahan.jumlah_sembuh|number}}</div>
+            <div class="value">{{sep(c.update.penambahan.jumlah_sembuh)}}</div>
           </mat-list-item>
           <mat-list-item>
             <div class="name">Jumlah Dirawat</div>
             <span>:</span>
-            <div class="value">{{c.update.penambahan.jumlah_dirawat|number}}</div>
+            <div class="value">{{sep(c.update.penambahan.jumlah_dirawat)}}</div>
           </mat-list-item>
         </mat-list>
       </mat-expansion-panel>
-      <mat-expansion-panel>
-
-      </mat-expansion-panel>
     </mat-accordion>
   </mat-card-content>
+  <mat-card-footer>
+    <div>
+      <i>Data diambil dari <a href="https://data.covid19.go.id/public/api/update.json">covid19.go.id</a>.</i>
+      <br>
+      <i>Data belum tentu 100% akurat.</i>
+    </div>
+  </mat-card-footer>
 </mat-card>

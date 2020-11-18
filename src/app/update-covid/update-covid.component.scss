@@ -1,10 +1,15 @@
 mat-list-item {
 
   .name {
-    width: 7em;
+    width: 10em;
   }
 
   span {
     align-self: center;
+  }
+
+  .value {
+    width: 7em;
+    text-align: end;
   }
 }
